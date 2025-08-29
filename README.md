@@ -60,7 +60,7 @@ If you wish to contribute you must abide by the ethos.
 - Assets SHALL NOT produce errors in the current version of Tabletop Club.
 - Card packs SHOULD include both the full deck (sans jokers/wildcards) and common stripped decks of the same suiting in their stacks file.
 - The use of "Artificial Intelligence" tools is forbidden.
-- Raster image formats SHALL ONLY be for non-versioned files like scans of playing cards.
+- Raster image formats SHOULD ONLY be for non-versioned files like scans of playing cards.
 - Large raster images (> 500 kB or part of a set in total > 500 kB) SHALL NOT be updated in the repository, instead scripts are to be used to automatically adjust them during the generation process. The cover image is excluded from this rule, but should still be edited only sparingly. This is to avoid using Git LFS, which greatly complicates the user experience for no benefit for this repository.
 - Vector image formats SHOULD be used in favor of raster formats.
 
