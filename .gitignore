@@ -5,7 +5,7 @@
 *.blend1
 
 # todos
-todo.*
+todo*
 
 # unused assets
 defunct/

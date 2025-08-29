@@ -53,6 +53,7 @@ If you wish to contribute you must abide by the ethos.
 
 - The purpose of this project is to provide as many high quality assets for Tabletop Club as possible.
 - These assets SHALL be free art, including no trademarks, no non-free copyrighted works, and no patent laden mechanics.
+    - For instance, the Game of the Modern Knaves is a trademark substitution of a public domain, patent-free game. The current trademark holder would perhaps even permit usage of the trademark in this instance, but this repository is not the place for that sort of licensing.
 - The generation scripts, configuration files, and other metadata SHALL be public domain under the CC0.
 - The repository is divided into src and asset directories, with src being the source files which SHALL generate the final assets.
 - The assets directory SHALL ONLY contain the final files ABSOLUTELY NECESSARY for the game, board, mechanic, or similar which is to be provided in the game.
