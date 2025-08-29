@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="300mm"
+   height="300mm"
+   viewBox="0 0 300 300.00001"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="flippers.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.2778203"
+     inkscape:cx="407.84604"
+     inkscape:cy="585.20858"
+     inkscape:window-width="1920"
+     inkscape:window-height="1060"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="reversi" />
+  <defs
+     id="defs2">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath369">
+      <g
+         inkscape:label="Clip"
+         id="use371">
+        <rect
+           style="fill:#ffffff;stroke:none;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+           id="rect1221"
+           width="50"
+           height="50"
+           x="51.170078"
+           y="-50"
+           inkscape:label="background" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath413">
+      <use
+         x="0"
+         y="0"
+         xlink:href="#g409"
+         id="use415" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath413-3">
+      <g
+         inkscape:label="Clip"
+         id="use415-6">
+        <rect
+           style="fill:#ffffff;stroke:none;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+           id="rect1229"
+           width="50"
+           height="50"
+           x="51.170078"
+           y="-50"
+           inkscape:label="background" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath413-1">
+      <g
+         inkscape:label="Clip"
+         id="use415-2">
+        <rect
+           style="fill:#ffffff;stroke:none;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+           id="rect1225"
+           width="50"
+           height="50"
+           x="51.170078"
+           y="-50"
+           inkscape:label="background" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath413-6">
+      <use
+         x="0"
+         y="0"
+         xlink:href="#g409-7"
+         id="use415-1" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath413-6-7">
+      <g
+         inkscape:label="Clip"
+         id="use415-1-5">
+        <rect
+           style="fill:#ffffff;stroke:none;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+           id="rect1340"
+           width="50"
+           height="50"
+           x="51.170078"
+           y="-50"
+           inkscape:label="background" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath413-6-6">
+      <g
+         inkscape:label="Clip"
+         id="use415-1-1">
+        <rect
+           style="fill:#ffffff;stroke:none;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+           id="rect1336"
+           width="50"
+           height="50"
+           x="51.170078"
+           y="-50"
+           inkscape:label="background" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath413-6-5">
+      <use
+         x="0"
+         y="0"
+         xlink:href="#g409-7-6"
+         id="use415-1-0" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath413-6-0">
+      <use
+         x="0"
+         y="0"
+         xlink:href="#g409-7-5"
+         id="use415-1-6" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(14.06596,72.391872)">
+    <g
+       id="template"
+       clip-path="url(#clipPath413)"
+       inkscape:label="template"
+       transform="translate(-31.815333,102.60813)">
+      <g
+         inkscape:label="Clip"
+         id="g409">
+        <rect
+           style="fill:#ffffff;stroke:none;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+           id="rect976"
+           width="50"
+           height="50"
+           x="51.170078"
+           y="-50"
+           inkscape:label="background" />
+      </g>
+      <circle
+         style="fill:#000000;stroke:none;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="path842-3"
+         cx="88.670074"
+         cy="-12.5"
+         r="12.5"
+         inkscape:label="bottom" />
+      <circle
+         style="fill:#000000;stroke:none;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="path842"
+         cx="63.670078"
+         cy="-12.5"
+         r="12.5"
+         inkscape:label="top" />
+      <rect
+         style="fill:#000000;stroke:none;stroke-width:2.99999;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect974"
+         width="50"
+         height="25"
+         x="51.170078"
+         y="-50"
+         inkscape:label="side" />
+    </g>
+    <g
+       id="reversi"
+       clip-path="url(#clipPath413-6)"
+       inkscape:label="reversi"
+       transform="translate(26.003584,102.60813)">
+      <g
+         inkscape:label="Clip"
+         id="g409-7">
+        <rect
+           style="fill:#ffffff;stroke:none;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+           id="rect976-9"
+           width="50"
+           height="50"
+           x="51.170078"
+           y="-50"
+           inkscape:label="background" />
+      </g>
+      <circle
+         style="fill:#ffffff;stroke:none;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="path842-0"
+         cx="63.670078"
+         cy="-12.5"
+         r="12.5"
+         inkscape:label="top" />
+      <rect
+         style="fill:#000000;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect1878"
+         width="24.999996"
+         height="31.249992"
+         x="133.98898"
+         y="-31.24999"
+         transform="translate(-57.818917)" />
+      <circle
+         style="fill:#000000;stroke:none;stroke-width:3.00001;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="path842-3-2"
+         cx="88.670067"
+         cy="-12.499998"
+         inkscape:label="bottom"
+         r="12.5" />
+      <rect
+         style="fill:#000000;stroke:none;stroke-width:2.99999;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect974-23"
+         width="49.999992"
+         height="12.500016"
+         x="51.170082"
+         y="-37.5"
+         inkscape:label="side" />
+      <rect
+         style="fill:#ffffff;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect1165"
+         width="49.999996"
+         height="12.5"
+         x="61.467228"
+         y="-5.4007301"
+         inkscape:label="side_top"
+         transform="translate(-10.297146,-44.599271)" />
+    </g>
+    <g
+       id="red_yellow"
+       clip-path="url(#clipPath413-6-5)"
+       inkscape:label="red_yellow"
+       transform="translate(88.95069,104.88633)">
+      <g
+         inkscape:label="Clip"
+         id="g409-7-6">
+        <rect
+           style="fill:#ffffff;stroke:none;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+           id="rect976-9-1"
+           width="50"
+           height="50"
+           x="51.170078"
+           y="-50"
+           inkscape:label="background" />
+      </g>
+      <circle
+         style="fill:#ffe680;stroke:none;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="path842-3-2-0"
+         cx="88.670074"
+         cy="-12.5"
+         r="12.5"
+         inkscape:label="bottom" />
+      <circle
+         style="fill:#ff5555;stroke:none;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="path842-0-6"
+         cx="63.670078"
+         cy="-12.5"
+         r="12.5"
+         inkscape:label="top" />
+      <rect
+         style="fill:#ffe680;stroke:none;stroke-width:2.99999;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect974-23-3"
+         width="49.999992"
+         height="13.802967"
+         x="51.170082"
+         y="-38.802948"
+         inkscape:label="side" />
+      <rect
+         style="fill:#ff5555;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect1165-2"
+         width="49.999996"
+         height="12.5"
+         x="61.467228"
+         y="-5.4007301"
+         inkscape:label="side_top"
+         transform="translate(-10.297146,-44.599271)" />
+    </g>
+    <g
+       id="green_blue"
+       clip-path="url(#clipPath413-6-0)"
+       inkscape:label="green_blue"
+       transform="translate(151.7978,104.83633)">
+      <g
+         inkscape:label="Clip"
+         id="g409-7-5">
+        <rect
+           style="fill:#ffffff;stroke:none;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+           id="rect976-9-5"
+           width="50"
+           height="50"
+           x="51.170078"
+           y="-50"
+           inkscape:label="background" />
+      </g>
+      <circle
+         style="fill:#37abc8;stroke:none;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="path842-3-2-4"
+         cx="88.670074"
+         cy="-12.5"
+         r="12.5"
+         inkscape:label="bottom" />
+      <circle
+         style="fill:#71c837;stroke:none;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="path842-0-7"
+         cx="63.670078"
+         cy="-12.5"
+         r="12.5"
+         inkscape:label="top" />
+      <rect
+         style="fill:#37abc8;stroke:none;stroke-width:2.99999;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect974-23-6"
+         width="49.999992"
+         height="14.471456"
+         x="51.170082"
+         y="-39.471428"
+         inkscape:label="side" />
+      <rect
+         style="fill:#71c837;stroke-width:3;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="rect1165-5"
+         width="49.999996"
+         height="12.5"
+         x="61.467228"
+         y="-5.4007301"
+         inkscape:label="side_top"
+         transform="translate(-10.297146,-44.599271)" />
+    </g>
+  </g>
+</svg>
