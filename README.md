@@ -28,6 +28,7 @@ Requirements:
 - This repository
 - `inkscape` on PATH <https://inkscape.org/>
 - `python3` on PATH <https://www.python.org/downloads/>
+- `blender` on PATH <https://www.blender.org/>
 - Python packages `numpy` `opencv-python` `pillow` (for card edge detection and alignment)
 - ImageMagick, with `convert`, `mogrify`, `composite` on PATH
 - Bash shell (for arrays)
@@ -44,6 +45,8 @@ The asset packs are available in the assets directory.
 ## License
 
 All works in this repository created by me (sighsv) are in the public domain, available under the CC0 license. This includes all textual files like scripts (Python and shell), configuration files (cfg), and markdown. Refer to the configuration files in the subdirectories for complete copyright information.
+
+Several images in Myriad Boards are under non-public-domain Creative Commons licenses.
 
 ## Contributing
 
