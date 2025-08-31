@@ -10,6 +10,9 @@ inkscape crokinole_board.svg --export-width=2048 --export-type=png --export-file
 inkscape pachisi.svg --export-width=2048 --export-type=png --export-filename=pachisi.png 2>/dev/null
 ../blender_gltf.sh "Pachisi Board.blend"
 
+../blender_gltf.sh "Mancala_26_square.blend"
+../blender_gltf.sh "Mancala_48_round.blend"
+
 rm *.png
 
 mv -v *.glb "$outdir/boards"
