@@ -10,6 +10,7 @@ $gen "Leopard 19" -x 40 -y 0.5 -z 40
 $gen "Leopard 29" -x 50 -y 0.5 -z 40
 $gen "Nine Men Morris" -x 28 -y 0.5 -z 28
 $gen "Zohn Ahl" -x 50 -y 0.5 -z 50 -c f7eae4ff
+$gen "O an quan" -x 35 -y 0.5 -z 15 -c c83737ff
 
 outdir="../../assets/Myriad Boards/boards"
 mkdir -p "$outdir"
