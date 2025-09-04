@@ -13,6 +13,6 @@ for obj in objects:
 bpy.ops.export_scene.gltf(filepath=sys.argv[-1],
     check_existing=False,
     use_visible=True,
-    export_cameras=False, 
+    export_cameras=False,
     use_renderable=True
 )

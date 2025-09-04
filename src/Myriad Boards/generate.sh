@@ -2,7 +2,7 @@
 cd "$(dirname "$(realpath "$0")")"
 gen="../boardgen.sh"
 
-$gen "Tables Board" -x 52 -y 0.5 -z 39 --ty 0.75 -c 6c5353ff
+$gen "Tables Board" -x 52 -y 0.5 -z 39 -v 0.75 -c 6c5353ff
 $gen "Ludo Board" -x 40 -y 0.5 -z 40
 $gen "Game of the Goose" -x 40 -y 0.5 -z 28.5
 $gen "Leopard 14" -x 40 -y 0.5 -z 40

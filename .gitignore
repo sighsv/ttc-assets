@@ -9,3 +9,5 @@ todo*
 
 # unused assets
 defunct/
+
+__pycache__/
