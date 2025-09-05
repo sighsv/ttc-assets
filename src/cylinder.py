@@ -5,11 +5,11 @@ import gltf
 import argparse
 
 
-def circle_points(number, radius=1, direction=1):
-    angle = direction * 2 / number * math.pi
+def circle_points(number, radius=1, rotation=math.pi/2):
+    angle = 2 / number * math.pi
     coord = lambda th: (math.cos(th) * radius, math.sin(th) * radius)
     return [
-        coord(angle * i) for i in range(number)
+        coord(angle * i + rotation) for i in range(number)
     ]
 
 
