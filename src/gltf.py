@@ -136,6 +136,11 @@ class Vec3(Vec2):
     access_type = 'VEC3'
 
 
+class Vec4(Vec2):
+    struct_type = 'ffff'
+    access_type = 'VEC4'
+
+
 class BufferView:
     def __init__(self,
             gltf, index,
@@ -252,38 +257,78 @@ class Texture:
 
     def serialize(self):
         return {
-            "source": self.image.index,
-            "sampler": self.sampler.index,
+            'source': self.image.index,
+            'sampler': self.sampler.index,
         }
+
+
+class TextureReference:
+    def __init__(self, gltf, texture,
+            tex_coord=None, strength=None, scale=None):
+        self.gltf = gltf,
+        if isinstance(texture, TextureReference):
+            tex_coord = texture.tex_coord
+            strength = texture.strength
+            scale = texture.scale
+            texture = texture.texture
+        self.texture = texture
+        self.tex_coord = tex_coord
+        self.strength = strength
+        self.scale = scale
+
+    def serialize(self):
+        return recursive_filter({
+            'index': self.texture.index,
+            'texCoord': self.tex_coord,
+            'strength': self.strength,
+            'scale': self.scale,
+        })
 
 
 class PBRMaterial:
     def __init__(self, gltf, index, name=None,
-            color=None, metallic=None, roughness=None):
+            color=None, metallic=None, roughness=None, metallic_roughness=None,
+            emissive=None, normal_map=None, occlusion_map=None,
+            alpha_mode=None, alpha_cutoff=None):
         self.gltf = gltf
         self.index = index
         self.name = name
         self.color = color
         self.metallic = metallic
         self.roughness = roughness
+        self.metallic_roughness = metallic_roughness
+        self.emissive = emissive
+        self.normal_map = normal_map
+        self.occlusion_map = occlusion_map
+        self.alpha_mode = alpha_mode
+        self.alpha_cutoff = alpha_cutoff
 
     def serialize(self):
         tname = lambda n, v: n + (
             'Texture' if isinstance(v, Texture) else 'Factor'
         )
         def tval(v):
-            if isinstance(v, Texture):
-                return {'index': v.index}
+            if isinstance(v, Texture) or isinstance(v, TextureReference):
+                return TextureReference(self.gltf, v).serialize()
             if isinstance(v, Color):
                 return v.serialize()
             return v
         return recursive_filter({
             'name': self.name,
+            'alphaMode': self.alpha_mode,
+            'alphaCutoff': self.alpha_cutoff,
             'pbrMetallicRoughness': {
                 tname('baseColor', self.color): tval(self.color),
-                tname('metallic', self.metallic): tval(self.metallic),
-                tname('roughness', self.roughness): tval(self.roughness),
-            }
+                'metallicFactor': self.metallic,
+                'roughnessFactor': self.roughness,
+                # G = roughness
+                # B = metallic
+                # ignore R and A
+                'metallicRoughnessTexture': tval(self.metallic_roughness),
+            },
+            'normalTexture': tval(self.normal_map),
+            'occlusionTexture': tval(self.occlusion_map),
+            tname('emissive', self.emissive): tval(self.emissive),
         })
 
 
@@ -293,12 +338,14 @@ class Primitive:
             indices=None,
             normals=None,
             tex_coords=None,
+            tangents=None,
             material=None):
         self.gltf = gltf
         self.vertices = vertices
         self.indices = indices
         self.normals = normals
         self.tex_coords = tex_coords
+        self.tangents = tangents
         self.material = material
 
     def serialize(self):
@@ -307,6 +354,7 @@ class Primitive:
                 'POSITION': getattr(self.vertices, 'index', None),
                 'NORMAL': getattr(self.normals, 'index', None),
                 'TEXCOORD_0': getattr(self.tex_coords, 'index', None),
+                'TANGENT': getattr(self.tangents, 'index', None),
             },
             'indices': getattr(self.indices, 'index', None),
             'material': getattr(self.material, 'index', None),
@@ -418,14 +466,9 @@ class GLTF:
         self.textures.append(texture)
         return texture
 
-    def pbr_material(self,
-            name=None,
-            color=None,
-            metallic=None,
-            roughness=None):
+    def pbr_material(self, **kwargs):
         material = PBRMaterial(
-            self, len(self.materials), name,
-            color, metallic, roughness
+            self, len(self.materials), **kwargs
         )
         self.materials.append(material)
         return material
@@ -457,13 +500,11 @@ class GLTF:
     def add_indices(self, indices):
         return self.accessor(self.embed_data(indices, dtype=Short))
 
-    def primitive(self,
-            vertices=None,
-            tex_coords=None,
-            normals=None,
-            indices=None,
-            material=None):
-        return Primitive(self, vertices, indices, normals, tex_coords, material)
+    def add_tangents(self, tangents):
+        return self.accessor(self.embed_data(tangents, dtype=Vec4))
+
+    def primitive(self, **kwargs):
+        return Primitive(self, **kwargs)
 
     def mesh(self, primitives):
         mesh = Mesh(self, len(self.meshes), primitives)
