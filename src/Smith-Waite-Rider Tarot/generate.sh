@@ -55,4 +55,4 @@ while [ $suit -lt 4 ]; do
     suit=$(( suit + 1 ))
 done
 
-cp -v *.jpg "$outdir/"
+cp -v *.cfg "$outdir/"
