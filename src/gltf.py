@@ -289,7 +289,8 @@ class PBRMaterial:
     def __init__(self, gltf, index, name=None,
             color=None, metallic=None, roughness=None, metallic_roughness=None,
             emissive=None, normal_map=None, occlusion_map=None,
-            alpha_mode=None, alpha_cutoff=None):
+            alpha_mode=None, alpha_cutoff=None,
+            extensions=None):
         self.gltf = gltf
         self.index = index
         self.name = name
@@ -302,6 +303,7 @@ class PBRMaterial:
         self.occlusion_map = occlusion_map
         self.alpha_mode = alpha_mode
         self.alpha_cutoff = alpha_cutoff
+        self.extensions = extensions
 
     def serialize(self):
         tname = lambda n, v: n + (
@@ -329,6 +331,7 @@ class PBRMaterial:
             'normalTexture': tval(self.normal_map),
             'occlusionTexture': tval(self.occlusion_map),
             tname('emissive', self.emissive): tval(self.emissive),
+            'extensions': self.extensions,
         })
 
 
@@ -419,6 +422,8 @@ class GLTF:
         self.textures = []
         self.meshes = []
         self.nodes = []
+        self.extensions_used = []
+        self.extensions_required = []
         self.scene = scene
         self.generator = generator
 
@@ -450,9 +455,14 @@ class GLTF:
             dtype
         )
 
+    def add_sampler(self, **kwargs):
+        sampler = Sampler(self, 0, **kwargs)
+        self.samplers.append(sampler)
+        return sampler
+
     def default_sampler(self):
         if len(self.samplers) == 0:
-            self.samplers.append(Sampler(self, 0))
+            self.add_sampler()
         return self.samplers[0]
 
     def add_texture(self, image, mimetype, sampler=None):
@@ -519,6 +529,8 @@ class GLTF:
     def serialize(self):
         dmap = lambda iterable: [i.serialize() for i in iterable]
         return recursive_filter({
+            'extensionsUsed': self.extensions_used,
+            'extensionsRequired': self.extensions_required,
             'scene': self.scene,
             'scenes': self.scenes,
             'nodes': dmap(self.nodes),
