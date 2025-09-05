@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for d in */; do
+for d in */generate.sh; do
     echo $d
-    "./$d/generate.sh"
+    "$d"
 done
