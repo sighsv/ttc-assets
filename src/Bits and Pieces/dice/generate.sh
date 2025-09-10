@@ -1,9 +1,11 @@
-#!/bin/sh
-cd "$(dirname "$(realpath "$0")")"
+#!/bin/bash
+canonicalize
+
+outdir="$ASSETS/Bits and Pieces/dice/d6"
 
 compile() {
     echo Generating $2.glb
-    ../../diegen.sh dice.svg "$@"
+    diegen.sh dice.svg "$@"
 }
 
 d="-x 1.6 -y 1.6 -z 1.6"
@@ -18,3 +20,9 @@ compile binary_die_blue 'Binary Die Blue' $d
 compile average_die 'Average Die' $d
 compile fudge_die 'Fudge Die' $d
 compile cowrie_even 'Cowrie Die Even' $d
+compile crown_anchor 'Crown and Anchor Die' $d
+compile french_suits 'French Card Suit Die' $d
+
+mkdir -p "$outdir"
+mv *.glb "$outdir"
+cp *.cfg "$outdir"
