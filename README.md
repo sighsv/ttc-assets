@@ -19,7 +19,8 @@ Game pieces:
 - Bits and Pieces: some game pieces like pawns and checkers
 
 Whole games:
-- Knaves Hounds Hares: "The Game of the Modern Knaves" and sequel "Hounds or Hares" (names by sighsv) based on the board games as patented by Elizabeth Magie
+- Knaves Hounds Hares: "The Game of the Modern Knaves" and sequel "Hounds or Hares" (names by sighsv) based on the board games as patented by Elizabeth Magie. Currently only has the 1904 patent board. The later 1924 patent board will be added. The retail board for the original version and the British version will be as well. No cards have been located for the original version, but cards have been located for the British versions. Approximations for the original's cards will be made.
+- Kriegsspiel: components for playing the 1824 and 1828 Reisswitz rulesets of Kriegsspiel at 1:7500 (1 cm = 100 paces) scale. Currently includes dice and rulers. Will include troop pieces and maps in the future.
 
 ## Building
 
@@ -65,7 +66,7 @@ If you wish to contribute you must abide by the ethos.
 - Card packs SHOULD include both the full deck (sans jokers/wildcards) and common stripped decks of the same suiting in their stacks file.
 - The use of "Artificial Intelligence" tools is forbidden.
 - Raster image formats SHOULD ONLY be for non-versioned files like scans of playing cards.
-- Large raster images (> 500 kB or part of a set in total > 500 kB) SHALL NOT be updated in the repository, instead scripts are to be used to automatically adjust them during the generation process. The cover image is excluded from this rule, but should still be edited only sparingly. This is to avoid using Git LFS, which greatly complicates the user experience for no benefit for this repository.
+- Large raster images (> 500 kB or part of a set in total > 500 kB) SHOULD NOT be updated in the repository, instead scripts are to be used to automatically adjust them during the generation process. The cover image is excluded from this rule, but should still be edited only sparingly. This is to avoid using Git LFS, which greatly complicates the user experience for no benefit for this repository.
 - Vector image formats SHOULD be used in favor of raster formats.
 
 ### Tools and techniques
@@ -96,3 +97,28 @@ German
 
 Latin (swords, coins, cups, clubs/batons)
 - Ombre, Scopa, etc. (40 cards: Ace - 7, face cards)
+
+## Sidenotes
+
+The cowrie die in the Bits and Pieces pack should ideally have companions which more accurately reflect the odds of cowrie throws, and other nonuniform randomization pieces. There is a dataset on Kaggle of various cowries and other shells laid out against various backgrounds (Oswald et al., 2024). It states that they depict *throws*, however, they are at least partially manually laid out. For instance, there are several cowries (but not all) in identical positions in `Brown_20.jpg`, `Brown_21.jpg`, and `Brown_22.jpg`. There are other instances of this in the dataset. It is astronomically unlikely for this to have occurred from random chance for a single shell across two images, let alone for multiple shells across multiple images. The dataset is only viable for classification, not for evaluating the probability weighting of cowrie shells.
+
+Davoudian and Ranjitha (2013) have reportedly performed 5000 cowrie throws to result in the empirical distribution for four shells being (mouths up, probability): 0, 6.6%; 1, 24.3%; 2, 38.1%; 3: 23.6%, 4: 7.4%. This is reconstructed from Davoudian and Nagabhushan's (2020) paper on implementing a bot for Chowka Bhara, as the 2013 thesis is not published. From my own testing with roughly 200 throws of two cowrie shells (100 with 1 shell, 100 with 2, with 300 counts total) it seems the probability of mouth up is 33% to 35%. A StackExchange post states that cowrie shells have a roughly 30% chance of rolling a "0" (Malcolmson, 2016). It is unclear whether the shell up or mouth up corresponds to zero.
+
+ We can calculate the distribution of n shells with probability m for mouth up ("inverted"), s for shell (back) up ("as is"), as such:
+
+```
+P(M=0) = (m^0 * s^n * nC0) / 2^n
+P(M=1) = (m^1 * s^(n-1) * nC1) / 2^n
+...
+P(M=n) = (m^n * s^0 * nCn) / 2^n
+```
+
+The distribution for 50% mouth, 50% shell is 6.25%, 25%, 37.5%, 25%, 6.25%, which matches quite closely with Davoudian and Ranjitha's findings. The probabilities for 33% mouth up are 19.75%, 39.5%, 29.63%, 9.88%, 1.23%.
+
+Black beans which have been marked on one random side by sanding against a flat rock until a roughly 2-3 mm white spot is visible have an empirical probability of landing spot up of roughly 40% to 50% (from 700 individual bean throws: 100 with a single bean, 100 with 6).
+
+## References
+
+- Davoudian, P., & Nagabhushan, P. (2019). Machine as One Player in Indian Cowry Board Game: Advanced Playing Strategies. International Journal of Computer Engineering and Technology, 10(2), 2019, pp. 1-13. https://doi.org/10.34218/IJCET.10.1.2019.019
+- Malcolmson, J. A. (2016). *Answer to question*. Board & Card Games. StackExchange. https://boardgames.stackexchange.com/a/33500
+- Oswald, C., Balaji, S., Naghul Pranav, K. S., Sridevi, M. (2024). Cowrie Shells Toss Dataset - Image Classification. Kaggle. https://www.kaggle.com/datasets/oswaldc/cowrie-shells-toss-dataset-image-classification
