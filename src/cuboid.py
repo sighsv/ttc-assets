@@ -121,6 +121,10 @@ def main():
         help='If set, use a single material.'
             ' If not, the texture will only be on the top face.'
     )
+    parser.add_argument('--alpha', '-a', action='store_true',
+        help='If set, use one-bit alpha in the top material.'
+            ' Half to fully transparent pixels in the image will show through.'
+    )
     parser.add_argument('--tr', default=0.3,
         help='Top roughness (or all if single material).'
     )
@@ -141,6 +145,7 @@ def main():
         color=texture,
         metallic=0.0,
         roughness=args.tr,
+        alpha_mode='MASK' if args.alpha else 'OPAQUE'
     )
 
     material = None
