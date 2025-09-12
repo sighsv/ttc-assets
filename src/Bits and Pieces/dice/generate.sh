@@ -23,6 +23,11 @@ compile cowrie_even 'Cowrie Die Even' $d
 compile crown_anchor 'Crown and Anchor Die' $d
 compile french_suits 'French Card Suit Die' $d
 
+compile devil_die_1 'Devil Die 1' $d
+compile devil_die_2 'Devil Die 2' $d
+compile devil_die_3 'Devil Die 3' $d
+compile devil_die_4 'Devil Die 4' $d
+
 mkdir -p "$outdir"
 mv *.glb "$outdir"
 cp *.cfg "$outdir"
